@@ -1,0 +1,175 @@
+python viscomp.py --nlm --nlm_h 25 --k 15 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 2 --patch-size 7 --alpha 0.5 --source ../test_images/jaguar2/source_noise2.png --target ../test_images/jaguar2/source_noise2.png --output ../results/jaguar2/jaguar2
+
+# experiment 1 —- jaguar2
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 4 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 7 --alpha 0.5 --source ../test_images/exp1/source_noise2.png --target ../test_images/exp1/source_noise2.png --output ../results/exp1/default/jaguar2
+
+# test k —- k = 1, 7, 15 de=4
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 15 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 7 --alpha 0.5 --source ../test_images/exp1/source_noise2.png --target ../test_images/exp1/source_noise2.png --output ../results/exp1/testk/15/jaguar2
+
+# test ps —- ps = 3, 15 or 11 de=7 (h may change) (not run 15, wait for too long)
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 4 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 15 --alpha 0.5 --source ../test_images/exp1/source_noise2.png --target ../test_images/exp1/source_noise2.png --output ../results/exp1/testps/15/jaguar2
+
+# test w —- w = 630/4=158, 630/2=315, 630*1.25=788 630*2=1260 de=630
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 4 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 7 --w 1260 --alpha 0.5 --source ../test_images/exp1/source_noise2.png --target ../test_images/exp1/source_noise2.png --output ../results/exp1/testw/1260/jaguar2
+
+
+# experiment 2 —- my own
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 4 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 7 --alpha 0.5 --source ../test_images/exp2/noise2.png --target ../test_images/exp2/noise2.png --output ../results/exp2/default/building
+
+# test k —- k = 1, 7, 10 de=4
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 9 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 7 --alpha 0.5 --source ../test_images/exp2/noise2.png --target ../test_images/exp2/noise2.png --output ../results/exp2/testk/9/building
+
+# test ps —- ps = 3, 11 de=7 (h may change) (not run 15, wait for too long)
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 4 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 11 --alpha 0.5 --source ../test_images/exp2/noise2.png --target ../test_images/exp2/noise2.png --output ../results/exp2/testps/11/building
+
+# test w —- w = 564/2=282, 564*2=1128 de=630
+default: k=4, iters=3, ps=7, alpha=0.5, w=630 (maximum dimension of the image)
+python viscomp.py --nlm --nlm_h 25 --k 4 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-size 7 --w 1128 --alpha 0.5 --source ../test_images/exp2/noise2.png --target ../test_images/exp2/noise2.png --output ../results/exp2/testw/1128/building
+
+
+default for jaguar2: iter=3, ps=7, h=25.0, alpha=0.5
+additional request: k=3
+python viscomp.py --nlm --nlm_h 25 --k 3 --partial-results --rec-source --nnf-image --nnf-vectors --nnf-line-color r --iters 3 --patch-esize 7 --alpha 0.5 --source ../test_images/jaguar2/source.png --target ../test_images/jaguar2/target.png --output ../results/jaguar2/jaguar2
+-----------------------------------------------------------------
+PatchMatch parameters:
+	Initial NNF: 		Generated internally
+	Iterations: 		5
+	Patch size: 		7
+	NLM h: 			25.0
+	Alpha: 			0.5
+	W: 			630
+	K: 			15
+	Run NLM algorithm: 	True
+	Propagation enabled: 	True
+	Random search enabled: 	True
+Output path and base filename: 	../results/jaguar2/jaguar2
+Visualization parameters:
+	Output files: 		correspondences, color nnf, rec'd source 
+	NNF subsampling: 	100
+	NNF line width: 	0.5
+	NNF line color: 	r
+	Matplotlib server mode: False
+	Tmp directory: 		./
+-----------------------------------------------------------------
+Running iteration 1...
+	Function _propagation_and_random_search_k ran 84.5446
+Median D =  27.0
+	Function _run_nlm ran 3.7458
+	Function _reconstruct_source ran 0.0072
+	Function _reconstruct_source ran 0.0080
+	Function _reconstruct_source ran 0.0088
+	Function _reconstruct_source ran 0.0076
+	Function _reconstruct_source ran 0.0079
+	Function _reconstruct_source ran 0.0076
+	Function _reconstruct_source ran 0.0078
+	Function _reconstruct_source ran 0.0088
+	Function _reconstruct_source ran 0.0083
+	Function _reconstruct_source ran 0.0078
+	Function _reconstruct_source ran 0.0086
+	Function _reconstruct_source ran 0.0104
+	Function _reconstruct_source ran 0.0075
+	Function _reconstruct_source ran 0.0078
+	Function _reconstruct_source ran 0.0085
+Running iteration 2...
+	Function _propagation_and_random_search_k ran 78.4918
+Median D =  24.0
+	Function _run_nlm ran 4.0173
+	Function _reconstruct_source ran 0.0050
+	Function _reconstruct_source ran 0.0062
+	Function _reconstruct_source ran 0.0059
+	Function _reconstruct_source ran 0.0062
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0065
+	Function _reconstruct_source ran 0.0060
+	Function _reconstruct_source ran 0.0071
+	Function _reconstruct_source ran 0.0061
+	Function _reconstruct_source ran 0.0067
+	Function _reconstruct_source ran 0.0069
+	Function _reconstruct_source ran 0.0070
+	Function _reconstruct_source ran 0.0091
+	Function _reconstruct_source ran 0.0066
+Running iteration 3...
+	Function _propagation_and_random_search_k ran 76.6115
+Median D =  24.0
+	Function _run_nlm ran 4.3005
+	Function _reconstruct_source ran 0.0073
+	Function _reconstruct_source ran 0.0053
+	Function _reconstruct_source ran 0.0054
+	Function _reconstruct_source ran 0.0053
+	Function _reconstruct_source ran 0.0070
+	Function _reconstruct_source ran 0.0066
+	Function _reconstruct_source ran 0.0058
+	Function _reconstruct_source ran 0.0055
+	Function _reconstruct_source ran 0.0053
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0075
+	Function _reconstruct_source ran 0.0051
+	Function _reconstruct_source ran 0.0062
+	Function _reconstruct_source ran 0.0077
+	Function _reconstruct_source ran 0.0075
+Running iteration 4...
+	Function _propagation_and_random_search_k ran 74.3257
+Median D =  23.0
+	Function _run_nlm ran 4.1263
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0056
+	Function _reconstruct_source ran 0.0053
+	Function _reconstruct_source ran 0.0058
+	Function _reconstruct_source ran 0.0061
+	Function _reconstruct_source ran 0.0055
+	Function _reconstruct_source ran 0.0076
+	Function _reconstruct_source ran 0.0060
+	Function _reconstruct_source ran 0.0065
+	Function _reconstruct_source ran 0.0102
+	Function _reconstruct_source ran 0.0060
+	Function _reconstruct_source ran 0.0062
+	Function _reconstruct_source ran 0.0056
+	Function _reconstruct_source ran 0.0055
+	Function _reconstruct_source ran 0.0053
+Running iteration 5...
+	Function _propagation_and_random_search_k ran 74.2959
+Median D =  23.0
+	Function _run_nlm ran 5.0292
+	Function _reconstruct_source ran 0.0061
+	Function _reconstruct_source ran 0.0057
+	Function _reconstruct_source ran 0.0054
+	Function _reconstruct_source ran 0.0058
+	Function _reconstruct_source ran 0.0059
+	Function _reconstruct_source ran 0.0083
+	Function _reconstruct_source ran 0.0061
+	Function _reconstruct_source ran 0.0067
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0056
+	Function _reconstruct_source ran 0.0055
+	Function _reconstruct_source ran 0.0055
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0081
+	Function _reconstruct_source ran 0.0060
+Median D =  23.0
+	Function _run_nlm ran 4.2997
+	Function _reconstruct_source ran 0.0049
+	Function _reconstruct_source ran 0.0052
+	Function _reconstruct_source ran 0.0059
+	Function _reconstruct_source ran 0.0057
+	Function _reconstruct_source ran 0.0056
+	Function _reconstruct_source ran 0.0068
+	Function _reconstruct_source ran 0.0060
+	Function _reconstruct_source ran 0.0058
+	Function _reconstruct_source ran 0.0064
+	Function _reconstruct_source ran 0.0069
+	Function _reconstruct_source ran 0.0063
+	Function _reconstruct_source ran 0.0067
+	Function _reconstruct_source ran 0.0057
+	Function _reconstruct_source ran 0.0062
+	Function _reconstruct_source ran 0.0083
+Done.
+
+Process finished with exit code 0
