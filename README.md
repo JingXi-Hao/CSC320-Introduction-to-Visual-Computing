@@ -1,1 +1,2 @@
-# CSC320-Introduction-to-Visual-Computing
+# CSC320-Introduction to Visual Computing
+This course provides the basics behind computational approaches to working with images, starting with image acquisition (i.e. cameras/sensors), proceeding through understanding different representations, image manipulations.
