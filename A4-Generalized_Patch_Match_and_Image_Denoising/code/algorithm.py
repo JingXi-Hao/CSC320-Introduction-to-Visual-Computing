@@ -308,7 +308,7 @@ def NNF_matrix_to_NNF_heap(source_patches, target_patches, f_k):
     target_index = f_k + source_index # k x N x M x 2
 
     # find invalid index condition -- mask
-    condition = (target_index[:, :, :, 0] >= 0) * (target_index[:, :, :, 0] < N) * (target_index[:, :, :, 01] >= 0) * (target_index[:, :, :, 0] < M)
+    condition = (target_index[:, :, :, 0] >= 0) * (target_index[:, :, :, 0] < N) * (target_index[:, :, :, 1] >= 0) * (target_index[:, :, :, 1] < M)
     condition = np.logical_not(condition) # k x N x M
 
     # clip target indices within its valid range
